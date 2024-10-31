@@ -15,6 +15,12 @@ class Event(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
 
+    class Meta:
+        ordering = ["-event_date"]
+
+    def __str__(self):
+        return f"{self.event_date} | {self.title} | Organised by {self.organiser}"
+
 
 class Comment(models.Model):
     event = models.ForeignKey(
@@ -24,3 +30,9 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment by {self.author}"
