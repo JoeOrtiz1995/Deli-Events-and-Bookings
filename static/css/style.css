@@ -51,7 +51,7 @@ body {
     height: auto;
 }
 
-.author {
+.date {
     color: white;
     margin: 4px;
     text-transform: uppercase;
@@ -91,22 +91,22 @@ body {
     z-index: 100;
 }
 
-.post-link {
+.event-link {
     text-decoration: none;
     color: #445261;
 }
 
-.post-link:hover,
-.page-link {
+.event-link:hover,
+.event-link {
     color: #E84610;
 }
 
-.post-title {
+.event-title {
     margin-top: 10%;
     margin-left: 5%;
 }
 
-.post-subtitle {
+.event-subtitle {
     margin-left: 5%;
     color: lightgray;
 }
