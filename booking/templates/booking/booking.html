@@ -16,7 +16,51 @@
             {{ about.content | safe }}
         </div>
     </div>
-    <div class="row justify-content-center">
+
+    <div class="row">
+        <div class="col-md-8 card mb-4 mt-3 ">
+            <h3>Bookings:</h3>
+            <div class="card-body">
+                {% for booking in bookings %}
+                <div
+                    class="p-2 bookings{% if not booking.confirmed and booking.client == user %} faded{% elif not booking.confirmed %} d-none{% endif %}">
+                    <p class="font-weight-bold">
+                        {{ booking.client }}
+                        <span class="font-weight-normal">
+                            {{ booking.request_date }}
+                        </span> wrote:
+                    </p>
+                    <div id="booking{{ booking.id }}">
+                        {{ booking.message | linebreaks }}
+                    </div>
+                    {% if not booking.confirmed and booking.client == user %}
+                    <p class="approval">
+                        This comment is awaiting approval
+                    </p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- New Comments -->
+        <div class="col-md-4 card mb-4 mt-3">
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <h3>Hi {{ user.username }}!</h3>
+                <p>Leave a comment and let us know what you think of this event!</p>
+                <form id="bookingForm" method="post" style="margin-top: 1.3em;">
+                    {{ booking_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% else %}
+                <p>Log in if you'd like to leave us a comment!</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="row justify-content-center">
         <div class="col-12 col-md-6 my-5">
             <h2>Make a Booking</h2>
             <p>If you'd like to visit us plese fill in the booking form below:</p>
@@ -26,6 +70,6 @@
                 <button class="btn btn-secondary" type="submit">Submit</button>
             </form>
         </div>
-    </div>
+    </div> -->
 </div>
 {% endblock content %}

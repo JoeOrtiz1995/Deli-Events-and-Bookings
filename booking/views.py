@@ -8,23 +8,27 @@ def about_us(request):
     """
     Renders the Booking Page's About Section, with the Bookings Form below.
     """
+
+    about = About.objects.all().last()
+    bookings = BookingRequest.objects.filter()
+
     if request.method == "POST":
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
             booking = booking_form.save(commit=False)
-            user = request.user
+            booking.client = request.user
             booking.save()
             messages.add_message(request, messages.SUCCESS,
                                  "Booking Request Received!")
 
-    about = About.objects.all().last()
     booking_form = BookingForm()
 
     return render(
         request, 
         "booking/booking.html",
         {
-            "bookings": about, 
+            "about": about, 
+            "bookings": bookings, 
             "booking_form": booking_form,
         },
     )

@@ -44,7 +44,7 @@ class About(models.Model):
 
 class BookingRequest(models.Model):
     client = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, related_name="diner"
+        User, on_delete=models.CASCADE, related_name="diner"
     )
     full_name = models.CharField(max_length=100)
     guests = models.CharField(choices=GUESTS, default=2)
