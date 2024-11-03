@@ -24,6 +24,12 @@
                 {% for booking in bookings %}
                 <div
                     class="p-2 bookings{% if not booking.confirmed and booking.client == user %} faded{% elif not booking.client == user %} d-none{% endif %}">
+                    {% if not booking.confirmed and booking.client == user %}
+                    <p class="approval">
+                        This booking is awaiting approval
+                    </p>
+                    {% endif %}
+                    {% if booking.confirmed and booking.client == user %}
                     <h4>Hi {{ booking.client }}!</h4>
                     <p class="font-weight-bold">
                         Your booking requested on:
@@ -33,19 +39,16 @@
                         We look forward to seeing you!
                     </p>
                     <div id="booking{{ booking.id }}">
+                        {{ booking.message | linebreaks }}
+                    </div>
                         <p class="font-weight-bold">
                             The Details are:
                         </p>
                         <p>DATE: {{ booking.booking_date }}</p>
                         <p>TIME: {{ booking.booking_time }}</p>
                         <p>DINERS: {{ booking.guests }}</p>
-                        <p>{{ booking.message | linebreaks }}</p>
                         <p>If you needed to cancel or make any amendments just get in touch.</p>
-                    </div>
-                    {% if not booking.confirmed and booking.client == user %}
-                    <p class="approval">
-                        This booking is awaiting approval
-                    </p>
+                    
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -69,4 +72,5 @@
         </div>
     </div>
 </div>
+
 {% endblock content %}

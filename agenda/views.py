@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
-from .models import Event
+from django.http import HttpResponseRedirect
+from .models import Event, Comment
 from .forms import CommentForm
 
 # Create your views here.
@@ -41,3 +42,43 @@ def event_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
+
+def edit_comment(request, slug, comment_id):
+    """
+    View for Users to edit comments
+    """
+    if request.method == "POST":
+
+        queryset = Event.objects.filter(status=1)
+        event = get_object_or_404(queryset, slug=slug)
+        comment = get_object_or_404(Comment, pk=comment_id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid() and comment.author == request.user:
+            comment = comment_form.save(commit=False)
+            comment.event = event
+            comment.approved = False
+            comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Your comment has been updated!')
+        else:
+            messages.add_message(request, messages.ERROR, "Sorry, there's been an Error updating your comment")
+
+    return HttpResponseRedirect(reverse('event_detail', args=[slug]))
+
+
+def delete_comment(request, slug, comment_id):
+    """
+    View for Users to delete comments
+    """
+    queryset = Event.objects.filter(status=1)
+    event = get_object_or_404(queryset, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Your comment has been deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, "It's only possible to delete your own comments")
+
+    return HttpResponseRedirect(reverse('event_detail', args=[slug]))
