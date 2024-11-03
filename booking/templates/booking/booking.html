@@ -4,18 +4,20 @@
 
 {% block content %}
 <div class="container mt-5">
-    <!-- About Section -->
-    <div class="row">
-        <div class="col-4 text-center">
-            <img src="{% static 'images/about_pic.jpg' %}" width="75%">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="d-md-block col-md-6 masthead-image">
+                <img src="{% static 'images/about_pic.jpg' %}" width="75%">
+            </div>
         </div>
-        <div class="col-8">
+        <div class="row">
             <!-- Title -->
             <h2>{{ about.title }}</h2>
             <!-- Content -->
             {{ about.content | safe }}
         </div>
     </div>
+
 
     <div class="row">
         <div class="col-md-8 card mb-4 mt-3 ">
