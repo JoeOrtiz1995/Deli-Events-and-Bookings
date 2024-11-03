@@ -23,53 +23,50 @@
             <div class="card-body">
                 {% for booking in bookings %}
                 <div
-                    class="p-2 bookings{% if not booking.confirmed and booking.client == user %} faded{% elif not booking.confirmed %} d-none{% endif %}">
+                    class="p-2 bookings{% if not booking.confirmed and booking.client == user %} faded{% elif not booking.client == user %} d-none{% endif %}">
+                    <h4>Hi {{ booking.client }}!</h4>
                     <p class="font-weight-bold">
-                        {{ booking.client }}
-                        <span class="font-weight-normal">
-                            {{ booking.request_date }}
-                        </span> wrote:
+                        Your booking requested on:
+                        <br>
+                        The {{ booking.request_date }} has been approved.
+                        <br>
+                        We look forward to seeing you!
                     </p>
                     <div id="booking{{ booking.id }}">
-                        {{ booking.message | linebreaks }}
+                        <p class="font-weight-bold">
+                            The Details are:
+                        </p>
+                        <p>DATE: {{ booking.booking_date }}</p>
+                        <p>TIME: {{ booking.booking_time }}</p>
+                        <p>DINERS: {{ booking.guests }}</p>
+                        <p>{{ booking.message | linebreaks }}</p>
+                        <p>If you needed to cancel or make any amendments just get in touch.</p>
                     </div>
                     {% if not booking.confirmed and booking.client == user %}
                     <p class="approval">
-                        This comment is awaiting approval
+                        This booking is awaiting approval
                     </p>
                     {% endif %}
                 </div>
                 {% endfor %}
             </div>
         </div>
-        <!-- New Comments -->
+        <!-- Booking Form -->
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
                 {% if user.is_authenticated %}
                 <h3>Hi {{ user.username }}!</h3>
-                <p>Leave a comment and let us know what you think of this event!</p>
+                <p>Please fill in the form below if you'd like to book:</p>
                 <form id="bookingForm" method="post" style="margin-top: 1.3em;">
                     {{ booking_form | crispy }}
                     {% csrf_token %}
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% else %}
-                <p>Log in if you'd like to leave us a comment!</p>
+                <p>Please log in or create an account if you'd like to make a booking!</p>
                 {% endif %}
             </div>
         </div>
     </div>
-
-    <!-- <div class="row justify-content-center">
-        <div class="col-12 col-md-6 my-5">
-            <h2>Make a Booking</h2>
-            <p>If you'd like to visit us plese fill in the booking form below:</p>
-            <form method="post">
-                {{ booking_form | crispy }}
-                {% csrf_token %}
-                <button class="btn btn-secondary" type="submit">Submit</button>
-            </form>
-        </div>
-    </div> -->
 </div>
 {% endblock content %}
