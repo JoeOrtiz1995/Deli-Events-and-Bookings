@@ -21,6 +21,8 @@ def about_us(request):
             booking.save()
             messages.add_message(request, messages.SUCCESS,
                                  "Booking Request Received!")
+        else:
+            messages.add_message(request, messages.ERROR, "Sorry, it's not been possible to submit your booking request, plese try again or contact us.")
 
     booking_form = BookingForm()
 

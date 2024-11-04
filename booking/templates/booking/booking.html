@@ -6,7 +6,7 @@
 <div class="container mt-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="d-md-block col-md-6 masthead-image">
+            <div class="d-md-block col-md-7 mb-4">
                 <img src="{% static 'images/about_pic.jpg' %}" width="75%">
             </div>
         </div>
@@ -19,9 +19,9 @@
     </div>
 
 
-    <div class="row">
-        <div class="col-md-8 card mb-4 mt-3 ">
-            <h3>Bookings:</h3>
+    <div class="row justify-content-center">
+        <div class="col-md-5 card mb-4 mt-3">
+            <h3 class="mt-2">Bookings:</h3>
             <div class="card-body">
                 {% for booking in bookings %}
                 <div

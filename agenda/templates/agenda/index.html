@@ -3,14 +3,17 @@
 {% block content %}
 
 <!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid text-center">
+    <div class="row index-text">
+        <h3>UPCOMING EVENTS AT RESTAURANTE DELI</h3>
+    </div>
+    <div class="row event-row">
 
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
+        <div class="col-12 mt-3">
             <div class="row">
                 {% for event in event_list %}
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
@@ -27,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:2 %}
             </div>
             <div class="row">
                 {% endif %}

@@ -9,7 +9,7 @@ from .forms import CommentForm
 class EventList(generic.ListView):
     queryset = Event.objects.filter(status=1).order_by("event_date")
     template_name = "agenda/index.html"
-    paginate_by = 2
+    paginate_by = 4
 
 def event_detail(request, slug):
     """
