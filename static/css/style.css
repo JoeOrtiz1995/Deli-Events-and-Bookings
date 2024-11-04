@@ -6,11 +6,10 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #ffffff;
 }
 
-.red-o {
-    color: #E84610;
+.navbar-brand {
+    color: #fff;
 }
 
 .thin {
@@ -158,4 +157,8 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+#logo {
+    color: #ffffff;
 }
