@@ -43,14 +43,14 @@
                     <div id="booking{{ booking.id }}">
                         {{ booking.message | linebreaks }}
                     </div>
-                        <p class="font-weight-bold">
-                            The Details are:
-                        </p>
-                        <p>DATE: {{ booking.booking_date }}</p>
-                        <p>TIME: {{ booking.booking_time }}</p>
-                        <p>DINERS: {{ booking.guests }}</p>
-                        <p>If you needed to cancel or make any amendments just get in touch.</p>
-                    
+                    <p class="font-weight-bold">
+                        The Details are:
+                    </p>
+                    <p>DATE: {{ booking.booking_date }}</p>
+                    <p>TIME: {{ booking.booking_time }}</p>
+                    <p>DINERS: {{ booking.guests }}</p>
+                    <p>If you needed to cancel or make any amendments just get in touch.</p>
+
                     {% endif %}
                 </div>
                 {% endfor %}
