@@ -1,8 +1,7 @@
 from django.db import models
 from datetime import date
-#import datetime
 from django.core.validators import MinValueValidator
-from django.core.exceptions import ValidationError
+#from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 
 BOOKING_STATE = ((0, "Unconfirmed"), (1, "Confirmed"))
@@ -52,7 +51,7 @@ class BookingRequest(models.Model):
     )
     full_name = models.CharField(max_length=100)
     guests = models.CharField(choices=GUESTS, default=2)
-    booking_date = models.DateField(auto_now_add=False, help_text=("Please enter the date in this format dd/mm/yyyy"), validators=[MinValueValidator(limit_value=date.today)])
+    booking_date = models.DateField(auto_now_add=False, help_text=("Please enter the date in this format yyyy-mm-dd"), validators=[MinValueValidator(limit_value=date.today)])
     booking_time = models.CharField(choices=BOOKING_TIMES, default="2:30pm")
     message = models.TextField(blank=True)
     request_date = models.DateTimeField(auto_now_add=True)
