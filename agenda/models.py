@@ -1,10 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 STATUS = ((0, "Unconfirmed"), (1, "Approved"))
 
 # Create your models here.
 class Event(models.Model):
+    """
+    Stores an event related to :model:`auth.user`.
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     organiser = models.ForeignKey(
@@ -23,6 +27,10 @@ class Event(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Stores a user's comment, related to
+    :model:`auth.user` & :model:`agenda.Event`.
+    """
     event = models.ForeignKey(
         Event, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(

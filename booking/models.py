@@ -1,8 +1,8 @@
 from django.db import models
 from datetime import date
 from django.core.validators import MinValueValidator
-#from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
+
 
 BOOKING_STATE = ((0, "Unconfirmed"), (1, "Confirmed"))
 
@@ -38,6 +38,9 @@ GUESTS = (
 
 # Create your models here.
 class About(models.Model):
+    """
+    Stores the About section data added by Superuser
+    """
     title = models.CharField(max_length=200)
     content = models.TextField()
 
@@ -46,6 +49,9 @@ class About(models.Model):
 
 
 class BookingRequest(models.Model):
+    """
+    Stores a User's booking request, related to model:`auth.user`
+    """
     client = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="diner"
     )
@@ -59,6 +65,4 @@ class BookingRequest(models.Model):
   
     def __str__(self):
         return f"{self.confirmed} | {self.booking_date} | {self.booking_time} | Table for: {self.guests}"
-
-
     

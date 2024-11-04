@@ -7,9 +7,20 @@ from .forms import BookingForm
 # Create your views here.
 def about_us(request):
     """
-    Renders the Booking Page's About Section, with the Bookings Form below.
+    Renders the Booking Page's most recent About Section content
+    and allows users to submit booking requests for the Admin to review.
+    Displays the latest instance of :model:`booking.About`.
+    **Context**
+    ``about``
+        The latest instance of :model:`booking.About`.
+    ``bookings``
+        The User's booking if approved, and a message stating it's being reviewed otherwise
+        :model:`booking.BookingRequest.
+    ``booking_form``
+        An instance of :form:`booking.booking_form`
+    **Template**
+    :template:`booking/booking.html`
     """
-
     about = About.objects.all().last()
     bookings = BookingRequest.objects.filter()
 
