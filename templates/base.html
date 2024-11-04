@@ -46,9 +46,9 @@
                         <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
                             href="{% url 'home' %}">Home</a>
                     </li>
-                    <li class="nav-item"></li>
-                    <a class="nav-link {% if request.path == booking_url %}active" aria-current="page{% endif %}"
-                        href="{% url 'bookings' %}">Bookings</a>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == booking_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'bookings' %}">Bookings</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
