@@ -39,52 +39,33 @@ To view the site please follow the link below:
     - [Bookings]
       - [About]
       - [Bookings Section]
-
-    - [Welcome Message](#welcome-message)
-    - [Instructions](#instructions)
-    - [Difficulty Levels](#difficulty-levels)
-    - [Game Process](#game-process)
-    - [Choosing a Word & Displaying It To The User](#choosing-a-word--displaying-it-to-the-user)
-    - [Processing The User's Guesses](#processing-the-users-guesses)
-    - [Lives & Stickman Art](#lives--stickman-art)
-    - [Game End & Rematch Request](#game-end--rematch-request)
-
-
+    - [User Profiles]
+      - [Register]
+      - [Login]
+      - [Log out]
+      - [Admin Site]
+    - [Message Alerts]
+    - [Error Page]
   - [Future Features](#future-features)
-
 
 - [TECHNOLOGIES USED](#technologies-used)
 
-
 - [TESTING](#testing)
-
   - [Manual Testing](#manual-testing)
   - [External Testing](#external-testing)
+  - [Performance & Accessibility](#performance--accessibility)
+  - [Validator Testing](#validator-testing)
+  - [Troubleshooting](#troubleshooting)
 
-
-            ******Think about adding a separate testing.md file******
-
-
-  - [Performance & Accessibility](#performance--accessibility) - Include in testing.md
-  - [Validator Testing](#validator-testing) - Include in testing.md
-
-
-  - [Troubleshooting](#troubleshooting) - Include in testing.md
-
-
-- [DEPLOYMENT TO HEROKU](#deployment)
-
-
-  - [Project Deployment](#project-deployment)
+- [PROJECT DEPLOYMENT](#project-deployment)
+  - [Deployment to Heroku](#deployment)  
   - [How to fork the repository from Github](#how-to-fork-the-repository-from-github)
   - [How to clone the project](#how-to-clone-the-project)
-
 
 - [CREDIT](#credit)
   - [Content Credits](#content-credit)
   - [Media Credts](#media-credits)
   - [Acknowledgements](#acknowledgements)
-
 
 
 # OBJECTIVES
@@ -323,12 +304,12 @@ This gives them full CRUD capabilities on the site. Some of the fields staff are
 [Back to top](#contents)
 
 
-## MESSAGES ALERTS
+## MESSAGE ALERTS
 Whenever a user submits a request such as leaving or editing a comment, or sending a booking form, a message will appear on the screen to let them know if it has been possible.
 
 - ### Screenshot
 
-### ERROR PAGE
+## ERROR PAGE
 A user would only see this page if an incorrect URL is entered. They will see a message on the page and a button to take them back to the home page. The Navbar links also work the same here as they do throughout the site.
 
 - ### Screenshot
@@ -427,9 +408,9 @@ The steps taken to deploy the application were as follows:
 
 7. There are two ways of finalising the application's deployment. At the bottom of the "Deploy" section, you will find an "Automatic deploys" and a "Manual deploy" subsection and you'll have to choose which method you'd prefer. The main difference between these options is that the Manual deploy option deploys the application by running the current code, however if any changes are made these will not be reflected until another Manual deploy is actioned. I've added links for further information about both of these options below.
 
-   - [Heroku Automatic Deploys](https://devcenter.heroku.com/articles/github-integration#automatic-deploys)
+    - [Heroku Automatic Deploys](https://devcenter.heroku.com/articles/github-integration#automatic-deploys)
 
-   - [Heroku Manual Deploys](https://devcenter.heroku.com/articles/github-integration#manual-deploys)
+    - [Heroku Manual Deploys](https://devcenter.heroku.com/articles/github-integration#manual-deploys)
 
 8. On this occasion I chose the Manual deploys option.
 
