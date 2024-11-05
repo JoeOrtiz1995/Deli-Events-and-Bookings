@@ -318,7 +318,11 @@ A user would only see this page if an incorrect URL is entered. They will see a 
 
 
 ## FUTURE FEATURES
+There are a number of features which unfortunately have not been able to be implemented at this stage such as:
 
+- Providing Users with the ability to edit and delete booking requests.
+- Adding a reviews section where users can review the Restaurant.
+- Users being able to delete their account.
 
 [Back to top](#contents)
 
