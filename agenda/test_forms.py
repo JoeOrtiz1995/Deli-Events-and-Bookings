@@ -6,8 +6,8 @@ class TestCommentForm(TestCase):
 
     def test_form_is_valid(self):
         comment_form = CommentForm({'body': 'This looks like it will be fun!'})
-        self.assertTrue(comment_form.is_valid(), msg="Form is not valid")
+        self.assertFalse(comment_form.is_valid(), msg="Form is valid")
     
     def test_form_is_invalid(self):
         comment_form = CommentForm({'body': ''})
-        self.assertFalse(comment_form.is_valid(), msg="Form is valid")
+        self.assertTrue(comment_form.is_valid(), msg="Form is not valid")

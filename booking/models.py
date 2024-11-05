@@ -56,9 +56,9 @@ class BookingRequest(models.Model):
         User, on_delete=models.CASCADE, related_name="diner"
     )
     full_name = models.CharField(max_length=100)
-    guests = models.CharField(choices=GUESTS, default=2)
+    guests = models.CharField(choices=GUESTS, default=2, max_length=10)
     booking_date = models.DateField(auto_now_add=False, help_text=("Please enter the date in this format yyyy-mm-dd"), validators=[MinValueValidator(limit_value=date.today)])
-    booking_time = models.CharField(choices=BOOKING_TIMES, default="2:30pm")
+    booking_time = models.CharField(choices=BOOKING_TIMES, default="2:30pm", max_length=10)
     message = models.TextField(blank=True)
     request_date = models.DateTimeField(auto_now_add=True)
     confirmed = models.IntegerField(choices=BOOKING_STATE, default=0)
