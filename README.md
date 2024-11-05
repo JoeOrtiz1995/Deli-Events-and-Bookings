@@ -22,7 +22,7 @@ To view the site please follow the link below:
      - [Returning Visitors](#returning-visitors)
   - [Project Management](#project-management)
     - [Github Projects](#github-projects)
-    - [Models Used]
+    - [Models Used](#models-used)
 
 - [USER EXPERIENCE](#user-experience)
   - [User Stories](#user-stories)
@@ -32,21 +32,21 @@ To view the site please follow the link below:
 
 - [FEATURES](#features)
   - [Main Features](#main-features)
-    - [Navbar]
-    - [All Upcoming Events]
-    - [Individual Events]
-      - [Event Description]
-      - [Comment Section]
-    - [Bookings]
-      - [About]
-      - [Bookings Section]
-    - [User Profiles]
-      - [Register]
-      - [Login]
-      - [Log out]
-      - [Admin Site]
-    - [Message Alerts]
-    - [Error Page]
+    - [Navbar](#navbar)
+    - [All Upcoming Events](#all-upcoming-events)
+    - [Individual Events](#individual-event)
+      - [Event Description](#event-description)
+      - [Comment Section](#comment-section)
+    - [Bookings](#bookings)
+      - [About](#about)
+      - [Bookings Section](#bookings-section)
+    - [User Profiles](#user-profiles)
+      - [Register](#register)
+      - [Login](#login)
+      - [Log out](#log-out)
+      - [Admin Site](#admin-site)
+    - [Message Alerts](#message-alerts)
+    - [Error Page](#error-page)
   - [Future Features](#future-features)
 
 - [TECHNOLOGIES USED](#technologies-used)
@@ -105,14 +105,11 @@ Visitors returning to the site will be able to log into their personal account s
 ## PROJECT MANAGEMENT
 
 ### GITHUB PROJECTS
-Github Projects was the platform used to plan and keep track of the project's development. 
+Github Projects was the platform used to plan and keep track of the project's development.
 
-## *** LINK TO PROJECTS ***
+The Kanban Board was useful keeping track of Acceptance Criteria, and a link to the Project site can be found below:
 
-<details><summary><b>Github Board</b></summary>
-
-![Kanban Board](readme/assets/images/user_stories.png)
-</details><br/>
+- [DELI EVENTS & BOOKINGS](https://github.com/users/JoeOrtiz1995/projects/7/views/1)
 
 ### MODELS USED
 <details><summary><b>Agenda App</b></summary>
@@ -137,9 +134,9 @@ Github Projects was the platform used to plan and keep track of the project's de
 ## USER STORIES
 Google Sheets was used to keep track of the User stories, and these were assigned labels using Github Issues, and following MoSCoW Prioritisation.
 
-## *** LINK TO SHEETS DOC ***
+- [User Stories](readme/assets/documents/User_stories_helper_doc.pdf)
 
-## *** LINK TO GITHUB ISSUES ***
+- [Github Issues]((https://github.com/JoeOrtiz1995/Deli-Events-and-Bookings/issues))
 
 [Back to top](#contents)
 
@@ -319,12 +316,24 @@ This gives them full CRUD capabilities on the site. Some of the fields staff are
 ## MESSAGE ALERTS
 Whenever a user submits a request such as leaving or editing a comment, or sending a booking form, a message will appear on the screen to let them know if it has been possible.
 
-- ### Screenshot
+<details><summary><b>User Messages on Booking Form</b></summary>
+
+![Booking Submitted]()
+![Booking Failed to Submit]()
+</details><br/>
+
+<details><summary><b>User messages when editing or deleting Comments</b></summary>
+
+![Blank Comment Message](readme/assets/images/blank_comment_message.png)
+![Comment Deleted](readme/assets/images/cmment_deleted.png)
+![Comment Update Error](readme/assets/images/comment_update_error.png)
+![Comment Updated](readme/assets/images/comment_update.png)
+</details><br/>
 
 ## ERROR PAGE
 A user would only see this page if an incorrect URL is entered. They will see a message on the page and a button to take them back to the home page. The Navbar links also work the same here as they do throughout the site.
 
-- ### Screenshot
+![Error Page](readme/assets/images/error_page.png)
 
 [Back to top](#contents)
 
@@ -526,16 +535,18 @@ As mentioned above though, there were some features which were unable to be impl
 
 
 ## TROUBLESHOOTING & BUGS
+- The main issue encountered during building the project was on the 29th October. I had been working on another version ofthe same project, but was unable to connect to my workspace. The only way round I could find was to create a new repository and start again. As a result there are quite a few features which I was unable to implement in time. 
 
+- I have been unable to carry out testing as extensively as I would have liked to on the Project.
+
+- A bug was detected on the 4th November where a User could submit a booking form requesting a past date. This has now been resolved with the help of a Django Validator (MinValueValidator), which checks that the date submitted in the form by users has to be from today onwards. A message will also be displayed to the user should any of the booking forms' fields not be valid. Some helper text was also added to show users what format the date should be entered. I also would have liked to add a calendar widget to the form to improve the user's experience.
+
+- An error which made the booking form not submit was identified on the 2nd November, and this was caused by the IntegerField I originally assigned to the guests parameter. As I had added choices to this field, even though the choices provided were technically numbers, the fact that they were in quotes meant they were being identified as a string instead. Changing this to a CharField resolved the issue.
 
 [Back to top](#contents)
 
 
 # PROJECT DEPLOYMENT
-
-
-[Back to top](#contents)
-
 
 ## DEPLOYMENT TO HEROKU
 The full application was deployed using the [Heroku Website](https://heroku.com/).
