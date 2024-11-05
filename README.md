@@ -136,7 +136,7 @@ Google Sheets was used to keep track of the User stories, and these were assigne
 
 - [User Stories](readme/assets/documents/User_stories_helper_doc.pdf)
 
-- [Github Issues]((https://github.com/JoeOrtiz1995/Deli-Events-and-Bookings/issues))
+- [Github Issues](https://github.com/JoeOrtiz1995/Deli-Events-and-Bookings/issues)
 
 [Back to top](#contents)
 
@@ -518,10 +518,6 @@ The code was ran on the following validation sites:
 </details><br/>
 
 - [CSS Validation](https://jigsaw.w3.org/css-validator/) - Ran and returned no errors
-<details><summary><b>HTML Validator Results</b></summary>
-
-![CSS Validator Results](readme/assets/images/HTML_Validator.png)
-</details><br/>
 
 - [PEP8 Validation](http://pep8online.com/) - The Views, Admin, Model and Form files were checked using the CI Python Linter.
 
