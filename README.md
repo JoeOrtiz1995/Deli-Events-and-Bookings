@@ -22,6 +22,7 @@ To view the site please follow the link below:
      - [Returning Visitors](#returning-visitors)
   - [Project Management](#project-management)
     - [Github Projects](#github-projects)
+    - [Models Used]
 
 - [USER EXPERIENCE](#user-experience)
   - [User Stories](#user-stories)
@@ -113,6 +114,21 @@ Github Projects was the platform used to plan and keep track of the project's de
 ![Kanban Board](readme/assets/images/user_stories.png)
 </details><br/>
 
+### MODELS USED
+<details><summary><b>Agenda App</b></summary>
+
+![Event Model](readme/assets/images/event_model.png)
+
+![Comment Model](readme/assets/images/comment_model.png)
+</details><br/>
+
+<details><summary><b>Booking App</b></summary>
+
+![About Model](readme/assets/images/about_model.png)
+
+![Booking Request Model](readme/assets/images/booking_request_model.png)
+</details><br/>
+
 [Back to top](#contents)
 
 
@@ -183,9 +199,9 @@ The Navbar contains links for the user to navigate across the site, and dependin
 
 A user who isn't logged in will see on the navbar links to register and to log in, whereas a logged in user will see a link to log out.
 
-- ### SCREENSHOT NAVBAR LOGGED IN
+![Navbar User Logged In](readme/assets/images/user_message_logged_in.png)
 
-- ### SCREENSHOT NAVBAR LOGGED OUT
+![Navbar User Logged Out](readme/assets/images/navbar_user_logged_out.png)
 
 [Back to top](#contents)
 
@@ -197,7 +213,9 @@ They will also see a message indicating whether they are logged in or not.
 
 The page is set up so that only 4 events are displayed per page. If there are more, buttons will be displayed underneath so that users can navigate and view all of the events.
 
-- ### SCREENSHOT EVENT LIST
+![User Logged In](readme/assets/images/event_page_user_logged_in.png)
+
+![User Logged Out](readme/assets/images/event_page_user_logged_out.png)
 
 They are able to click on any event, and this will take them to that event's page.
 
@@ -214,7 +232,7 @@ Once a comment is approved it will be visible to all users who visit that event'
 #### EVENT DESCRIPTION
 This section contains the event's description below a banner with the event's date and a photo of the restaurant. Each event has its own description and users are encouraged to comment what they think.
 
-- ### SCREENSHOT EVENT DESC
+![Event Description](readme/assets/images/event_description_page_user_logged_in.png)
 
 #### COMMENT SECTION
 The Comment section is below the event's description. 
@@ -226,7 +244,7 @@ Logged in users will also be able to see all the approved comments as well as an
 - #### ADDING COMMENTS
 Only a logged in user is able to add comments, and a message is displayed to make them aware. 
 
-- ### SCREENSHOT COMMENTS SECTION LOGGED OUT
+![Comments Section User Logged Out](readme/assets/images/comments_user_logged_out.png)
 
 - #### EDITING COMMENTS
 Logged in users are also able to edit their own comments. If they edit an approved comment, this new edited comment would not be automatically approved and would have to be reviewed and approved by an admin first.
@@ -234,7 +252,7 @@ Logged in users are also able to edit their own comments. If they edit an approv
 - #### DELETING COMMENTS
 Logged in users are able to delete their comments. When looking to delete a comment they will be asked to confirm their decision before the deletion is carried. This was done so as to minimise any unintended deletions.
 
-- ### SCREENSHOT COMMENTS SECTION LOGGED in
+![Comments Section User Logged In](readme/assets/images/comments_user_logged_in.png) 
 
 [Back to top](#contents)
 
@@ -247,10 +265,12 @@ The About photo and content is what users will see when they first visit the boo
 
 Admins can edit the text through the admin panel, and the page has been set up so that only the most recent updated version is shown.
 
-- ### SCREENSHOT ABOUT SECTION
+![About Section User Logged In](readme/assets/images/bookings_page.png)
 
 #### BOOKINGS SECTION
 If a user is logged in, they will see a booking form next to any previous booking requests submitted.
+
+![Bookings Section User Logged In](readme/assets/images/bookings_form_user_logged_out.png)
 
 - #### SUBMIT A BOOKING
 Only users who are logged in can submit booking requests. While the booking is being reviewed they will see a message stating this.
@@ -259,9 +279,7 @@ Once the booking request has been approved the message displayed will now confir
 
 A future feature will be allowing users to edit or cancel any bookings they make.
 
-- ### SCREENSHOT BOOKINGS LOGGED OUT
-
-- ### SCREENSHOT BOOKINGS LOGGED IN AND CONFIRMED
+![Bookings Section User Logged In](readme/assets/images/bookings_form_user_logged_in.png)
 
 [Back to top](#contents)
 
@@ -269,26 +287,20 @@ A future feature will be allowing users to edit or cancel any bookings they make
 ## USER PROFILES
 A message displayed to users across all pages lets them know whether they're logged in or not.
 
-- ### SCREENSHOT logged in
+![User Logged Out](readme/assets/images/user_message_logged_out.png)
 
-- ### SCREENSHOT Logged out
+![User Logged In](readme/assets/images/user_message_logged_in.png)
 
 ### REGISTER
 When a user visits the registration page they will be asked for a Username and Password. Once they've created the account they'll be redirected back to the homepage.
 
 There are links to the Login page for users who already have an account.
 
-- ### SCREENSHOT 
-
 ### LOGIN
 If a user has registered previously they will be able to log in using the link on the nav bar, however they can also use the Remember Me feature so they are automatically logged in whenever they visit the site.
 
-- ### SCREENSHOT 
-
 ### LOG OUT
 Once a user has registered and/or logged into their account, they will have a link in the nav bar to log out.
-
-- ### SCREENSHOT 
 
 ### ADMIN SITE
 This site was created with the intention of staff being able to review the content displayed on their site. 
@@ -362,7 +374,9 @@ There are a number of features which unfortunately have not been able to be impl
 # TESTING
 
 ## TESTING USER STORIES
-A complete list of the User Stories can be found in here: [User Stories Log]
+A complete list of the User Stories can be found in here: 
+
+- [User Stories Log](readme/assets/documents/User_stories_helper_doc.pdf)
 
 Manual tests were carried out on all the acceptance criteria which was successful in order to move the User Stories to completed.
 
