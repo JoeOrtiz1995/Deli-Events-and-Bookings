@@ -23,25 +23,22 @@ To view the site please follow the link below:
   - [Project Management](#project-management)
     - [Github Projects](#github-projects)
 
-
 - [USER EXPERIENCE](#user-experience)
   - [User Stories](#user-stories)
   - [Wireframes](#wireframes)
   - [Site Structure](#site-structure)
-  - [Design Choices](#design-choices)
-  - [Creation Process](#creation-process)
-    - [Planning](#planning)
-    - [Python Logic](#python-logic)
-  
+  - [Design Choices](#design-choices)  
 
 - [FEATURES](#features)
-
-
-  - [Outline](#outline)
-
-
   - [Main Features](#main-features)
-
+    - [Navbar]
+    - [All Upcoming Events]
+    - [Individual Events]
+      - [Event Description]
+      - [Comment Section]
+    - [Bookings]
+      - [About]
+      - [Bookings Section]
 
     - [Welcome Message](#welcome-message)
     - [Instructions](#instructions)
@@ -151,7 +148,21 @@ Google Sheets was used to keep track of the User stories, and these were assigne
 
 
 ## WIREFRAMES
-The initial wireframes for the site were created using [Balsamiq](https://balsamiq.com/wireframes/). 
+The initial wireframes for the site were created using [Balsamiq](https://balsamiq.com/wireframes/).
+
+<details><summary><b>Balsamiq Wireframes</b></summary>
+
+![Homepage Card View](readme/assets/images/homepage_card_view.png)
+
+![Homepage List View](readme/assets/images/homepage_list_view.png)
+
+![Bookings Page View](readme/assets/images/bookings_about_page.png)
+
+![Login Page View](readme/assets/images/login_page.png)
+
+![Registration Page View](readme/assets/images/registration_page.png)
+
+</details><br/>
 
 The site didn't end up looking quite like the wireframes were set up, however they still helped visualise a basic layout for the website.
 
@@ -173,7 +184,11 @@ It is split into three main parts:
 ## DESIGN CHOICES
 The colour scheme used in the design was inspired by the colours of Restaurante Deli, and the [coolors website](https://coolors.co/) was used to create the palette below.
 
-- ### PALETTE SCREENSHOT
+<details><summary><b>Restaurante Deli Colour Scheme</b></summary>
+
+![Coolors Colour Scheme](readme/assets/images/deli_bookings_and_events_colour_scheme.png)
+
+</details><br/>
 
 [Back to top](#contents)
 
@@ -198,10 +213,6 @@ A user who isn't logged in will see on the navbar links to register and to log i
 When a user visits the site, the first page they will see is a list of upcoming events which the Admin has created.
 
 They will also see a message indicating whether they are logged in or not.
-
-- ### SCREENSHOT MESSAGE LOGGED IN
-
-- ### SCREENSHOT MESSAGE LOGGED OUT
 
 The page is set up so that only 4 events are displayed per page. If there are more, buttons will be displayed underneath so that users can navigate and view all of the events.
 
@@ -242,6 +253,8 @@ Logged in users are also able to edit their own comments. If they edit an approv
 - #### DELETING COMMENTS
 Logged in users are able to delete their comments. When looking to delete a comment they will be asked to confirm their decision before the deletion is carried. This was done so as to minimise any unintended deletions.
 
+- ### SCREENSHOT COMMENTS SECTION LOGGED in
+
 [Back to top](#contents)
 
 
@@ -252,6 +265,8 @@ This page contains the About section and the form for users to submit a booking 
 The About photo and content is what users will see when they first visit the bookings page. The picture of the restaurant's interior is displayed at the top of the page, with a brief history of Restaurante Deli beneath it. 
 
 Admins can edit the text through the admin panel, and the page has been set up so that only the most recent updated version is shown.
+
+- ### SCREENSHOT ABOUT SECTION
 
 #### BOOKINGS SECTION
 If a user is logged in, they will see a booking form next to any previous booking requests submitted.
@@ -309,10 +324,14 @@ This gives them full CRUD capabilities on the site. Some of the fields staff are
 
 
 ## MESSAGES ALERTS
+Whenever a user submits a request such as leaving or editing a comment, or sending a booking form, a message will appear on the screen to let them know if it has been possible.
 
+- ### Screenshot
 
 ### ERROR PAGE
+A user would only see this page if an incorrect URL is entered. They will see a message on the page and a button to take them back to the home page. The Navbar links also work the same here as they do throughout the site.
 
+- ### Screenshot
 
 [Back to top](#contents)
 
@@ -384,18 +403,62 @@ This gives them full CRUD capabilities on the site. Some of the fields staff are
 
 
 ## DEPLOYMENT TO HEROKU
+The full application was deployed using the [Heroku Website](https://heroku.com/).
 
+The steps taken to deploy the application were as follows:
+
+1. Accessed the Heroku website and logged into my account. If you don't have an account you can follow [this link](https://signup.heroku.com/login) to create one.
+
+![Heroku Dashboard](readme/assets/images/heroku_dashboard.png)
+
+2. On the dashboard click on "New", and then "Create new app".
+
+3. I chose an app name (deli-events-and-bookings), changed the region to "Europe" and clicked "Create app".
+
+![Heroku Create App](readme/assets/images/heroku_create_app.png)
+
+4. Once this is done, navigate over to the "Settings" section and click on "Reveal Config Vars". Enter any config vars required.
+
+![Heroku Config Vars](readme/assets/images/heroku_config_vars.png)
+
+5. Go back over to the "Deploy" section and link your GitHub account by clicking on the GitHub button. Sign in to your GitHub account if necessary, and once this is done type the name of the repository you want to deploy and search for it using the Search button. Once you've found it press "Connect". This will link the Heroku app to the code in GitHub.
+
+![Heroku Link to GitHub](readme/assets/images/heroku_github_link.png)
+
+7. There are two ways of finalising the application's deployment. At the bottom of the "Deploy" section, you will find an "Automatic deploys" and a "Manual deploy" subsection and you'll have to choose which method you'd prefer. The main difference between these options is that the Manual deploy option deploys the application by running the current code, however if any changes are made these will not be reflected until another Manual deploy is actioned. I've added links for further information about both of these options below.
+
+   - [Heroku Automatic Deploys](https://devcenter.heroku.com/articles/github-integration#automatic-deploys)
+
+   - [Heroku Manual Deploys](https://devcenter.heroku.com/articles/github-integration#manual-deploys)
+
+8. On this occasion I chose the Manual deploys option.
+
+9. Once the deployment has finished, a message will appear to confirm this above a button that says "View" which will take you to the deployed application. You can also click on open app at the top of the Page.
 
 [Back to top](#contents)
 
 ## HOW TO FORK THE REPOSITORY FROM GITHUB
+The steps required to fork [this repository](https://github.com/JoeOrtiz1995/Deli-Events-and-Bookings) are listed below:
 
+1. Follow the link above to locate my original repository.
+
+2. In the code section, there is a button that says "Fork" located just above the "About" section.
+
+3. Click on this button and the fork will be created.
 
 [Back to top](#contents)
 
 
 ## HOW TO CLONE THE PROJECT
+To clone this project follow the steps listed below:
 
+1. Navigate over to [this repository](https://github.com/JoeOrtiz1995/Deli-Events-and-Bookings) and click on the green "Code" button located next to "Add file".
+
+2. From the dropdown copy the URL link. This can be done using the copy button next to the link or by highlighting it and copying it.
+
+3. Within the IDE open Git Bash, and change the working directory's location to the one you want to work off, at which point the cloned directory will be created.
+
+4. Type "git clone", and paste the URL copied in step 1 and the clone will be created.
 
 [Back to top](#contents)
 
@@ -419,6 +482,10 @@ This gives them full CRUD capabilities on the site. Some of the fields staff are
 
 
 ## ACKNOWLEDGEMENTS
+I would like to mention my Mentor, [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for his support and feedback during the building process. His suggestions and comments on the application and how to improve it helped me have the confidence to go further and test my knowledge.
 
+A further acknowledgement to [Worldofmarcus](https://github.com/worldofmarcus) as their [README.md](https://github.com/worldofmarcus/project-portfolio-4/blob/main/README.md) file was a great tool to help me set out the structure for mine.
+
+I would also like to add a further thank you to the Student Support Team at Code Institute for their assistance so far on the course.
 
 [Back to top](#contents)
