@@ -20,15 +20,19 @@ To view the site please follow the link below:
   - [Visitor Goals](#visitor-goals)
      - [First Time Visitors](#first-time-visitors)
      - [Returning Visitors](#returning-visitors)
+  - [Project Management](#project-management)
+    - [Github Projects](#github-projects)
 
 
 - [USER EXPERIENCE](#user-experience)
   - [User Stories](#user-stories)
+  - [Wireframes](#wireframes)
+  - [Site Structure](#site-structure)
+  - [Design Choices](#design-choices)
   - [Creation Process](#creation-process)
     - [Planning](#planning)
-    - [App Structure](#app-structure)
     - [Python Logic](#python-logic)
-  - [Design Choices](#design-choices)
+  
 
 - [FEATURES](#features)
 
@@ -154,7 +158,7 @@ The site didn't end up looking quite like the wireframes were set up, however th
 [Back to top](#contents)
 
 
-### SITE STRUCTURE
+## SITE STRUCTURE
 The structure of the site is very simple. 
 
 It is split into three main parts:
@@ -176,67 +180,138 @@ The colour scheme used in the design was inspired by the colours of Restaurante 
 
 # FEATURES
 
-## OUTLINE
-
-
-[Back to top](#contents)
-
-
 ## MAIN FEATURES
 
 ### NAVBAR
+The Navbar contains links for the user to navigate across the site, and depending if the user is logged in or not the links displayed will vary.
 
+A user who isn't logged in will see on the navbar links to register and to log in, whereas a logged in user will see a link to log out.
+
+- ### SCREENSHOT NAVBAR LOGGED IN
+
+- ### SCREENSHOT NAVBAR LOGGED OUT
 
 [Back to top](#contents)
 
 
 ### ALL UPCOMING EVENTS
+When a user visits the site, the first page they will see is a list of upcoming events which the Admin has created.
 
+They will also see a message indicating whether they are logged in or not.
+
+- ### SCREENSHOT MESSAGE LOGGED IN
+
+- ### SCREENSHOT MESSAGE LOGGED OUT
+
+The page is set up so that only 4 events are displayed per page. If there are more, buttons will be displayed underneath so that users can navigate and view all of the events.
+
+- ### SCREENSHOT EVENT LIST
+
+They are able to click on any event, and this will take them to that event's page.
 
 [Back to top](#contents)
 
 
 ### INDIVIDUAL EVENT
+On this page a user will see a full description of the event they've clicked on. 
+
+Only Admins are able to create, edit and delete events. They also have the ability to approve comments. 
+
+Once a comment is approved it will be visible to all users who visit that event's page regardless if they're logged in or not.
 
 #### EVENT DESCRIPTION
+This section contains the event's description below a banner with the event's date and a photo of the restaurant. Each event has its own description and users are encouraged to comment what they think.
+
+- ### SCREENSHOT EVENT DESC
 
 #### COMMENT SECTION
+The Comment section is below the event's description. 
+
+What users see will depend on their log in status. If they're not logged in they are able to see approved comments, but a message displayed will let them know that only logged in users are able to leave a comment.
+
+Logged in users will also be able to see all the approved comments as well as any unapproved comments they have posted. Users are able to edit and delete any of their comments.
 
 - #### ADDING COMMENTS
+Only a logged in user is able to add comments, and a message is displayed to make them aware. 
+
+- ### SCREENSHOT COMMENTS SECTION LOGGED OUT
 
 - #### EDITING COMMENTS
+Logged in users are also able to edit their own comments. If they edit an approved comment, this new edited comment would not be automatically approved and would have to be reviewed and approved by an admin first.
 
 - #### DELETING COMMENTS
- 
+Logged in users are able to delete their comments. When looking to delete a comment they will be asked to confirm their decision before the deletion is carried. This was done so as to minimise any unintended deletions.
 
 [Back to top](#contents)
 
 
 ### BOOKINGS
+This page contains the About section and the form for users to submit a booking request.
 
 #### ABOUT
+The About photo and content is what users will see when they first visit the bookings page. The picture of the restaurant's interior is displayed at the top of the page, with a brief history of Restaurante Deli beneath it. 
+
+Admins can edit the text through the admin panel, and the page has been set up so that only the most recent updated version is shown.
 
 #### BOOKINGS SECTION
+If a user is logged in, they will see a booking form next to any previous booking requests submitted.
 
 - #### SUBMIT A BOOKING
+Only users who are logged in can submit booking requests. While the booking is being reviewed they will see a message stating this.
+
+Once the booking request has been approved the message displayed will now confirm this to the user, who will also be able to see the main details in their booking request.
+
+A future feature will be allowing users to edit or cancel any bookings they make.
+
+- ### SCREENSHOT BOOKINGS LOGGED OUT
+
+- ### SCREENSHOT BOOKINGS LOGGED IN AND CONFIRMED
 
 [Back to top](#contents)
 
+
 ## USER PROFILES
+A message displayed to users across all pages lets them know whether they're logged in or not.
+
+- ### SCREENSHOT logged in
+
+- ### SCREENSHOT Logged out
 
 ### REGISTER
+When a user visits the registration page they will be asked for a Username and Password. Once they've created the account they'll be redirected back to the homepage.
+
+There are links to the Login page for users who already have an account.
+
+- ### SCREENSHOT 
 
 ### LOGIN
+If a user has registered previously they will be able to log in using the link on the nav bar, however they can also use the Remember Me feature so they are automatically logged in whenever they visit the site.
+
+- ### SCREENSHOT 
 
 ### LOG OUT
+Once a user has registered and/or logged into their account, they will have a link in the nav bar to log out.
+
+- ### SCREENSHOT 
 
 ### ADMIN SITE
+This site was created with the intention of staff being able to review the content displayed on their site. 
 
+From here they can:
+- Add, view, edit and delete events.
+- Review comments by submitted by users.
+- Approve booking requests.
+- Update the About section's content.
+
+This gives them full CRUD capabilities on the site. Some of the fields staff are able to amend have been improved by implementing Summernote, which enables rich-text editing.
 
 [Back to top](#contents)
 
 
 ## MESSAGES ALERTS
+
+
+### ERROR PAGE
 
 
 [Back to top](#contents)
