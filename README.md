@@ -322,6 +322,7 @@ There are a number of features which unfortunately have not been able to be impl
 
 - Providing Users with the ability to edit and delete booking requests.
 - Adding a reviews section where users can review the Restaurant.
+- Add further testing on existing models and views.
 - Users being able to delete their account.
 
 [Back to top](#contents)
@@ -330,13 +331,30 @@ There are a number of features which unfortunately have not been able to be impl
 # TECHNOLOGIES USED
 
 ## LANGUAGES
-
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the site.
+- [HTML5](https://en.wikipedia.org/wiki/HTML) - Provides the content and structure for the website.
+- [CSS3](https://en.wikipedia.org/wiki/CSS) - Provides the styling for the website.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Provides interactive elements of the website
 
 [Back to top](#contents)
 
 
 ## FRAMEWORKS & SOFTWARE
-
+- [Django](https://www.djangoproject.com/) - A model-view-template framework used to create the site.
+- [Bootstrap](https://getbootstrap.com/) - A CSS framework that helps building solid, responsive websites.
+- [Balsamiq](https://balsamiq.com/) - Used to create the wireframe.
+- [Google Sheets](https://docs.google.com/spreadsheets/create) - Used to log the User Stories.
+- [Google Docs](https://docs.google.com/) - Used to start planning the project and keeping notes on it.
+- [Github](https://github.com/) - Used to host and edit the website.
+- [Gitpod](https://www.gitpod.io) used to push changes to the GitHub repository.
+- [Heroku](https://en.wikipedia.org/wiki/Heroku) - A cloud platform that the application is deployed to.
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to test performance of site.
+- [VSCode](https://code.visualstudio.com/) - Used to create and edit the site.
+- [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to debug and test responsiveness.
+- [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
+- [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
+- [PEP8 Validation](http://pep8online.com/) - Used to validate Python code.
+- [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
 
 [Back to top](#contents)
 
@@ -344,7 +362,125 @@ There are a number of features which unfortunately have not been able to be impl
 # TESTING
 
 ## TESTING USER STORIES
+A complete list of the User Stories can be found in here: [User Stories Log]
 
+Manual tests were carried out on all the acceptance criteria which was successful in order to move the User Stories to completed.
+
+As mentioned above though, there were some features which were unable to be implemented and as such these User Stories are still considered either "In Progress" or "To do".
+
+- The Homepage will be a list of upcoming events
+  - This has been achieved
+
+- A user doesn't have to log in to see events or make a booking.
+  - Due to model relationships it was decided that Users should log in in order to book.
+
+- The bookings page is accessible from a link on the navbar.
+  - This has been achieved
+
+- The user can click on an event to expand it and see if they'd like to attend.
+  - This has been achieved, they can also comment on these.
+
+- Any new event will be displayed on the site's homepage.
+  - As long as the event has been approved it will be displayed
+
+- Only Superusers can add events.
+  - This has been achieved
+
+- Users can access the bookings page from the homepage.
+  - This has been achieved
+
+- Users can fill and submit a form with their booking request.
+  - This has been achieved, although it's a shame not having been able to include CRUD functionality on here as well as on comments.
+
+- The form will be accessible only to Superusers.
+  - This has been achieved
+
+- A superuser can create an account with their email.
+  - This has been achieved
+
+- A superuser can log into their account.
+  - This has been achieved
+
+- A superuser can create, edit and delete events.
+  - This has been achieved
+
+- A superuser can view booking requests from the admin panel.
+  - This has been achieved
+
+- A user can create an account with their email.
+    - This has been achieved
+
+- A user can log in once the account has been created.
+    - This has been achieved
+
+- A user can see their past and upcoming bookings when logged in.
+  - This has not been able to be implemented yet but will be in future.
+
+- A user can edit their upcoming bookings once logged in.
+  - This has not been implemented yet.
+
+- A registered user can access their account and see the status of their booking request.
+  - This has been achieved.
+
+- Registered users can see previous booking requests
+    - This has been achieved
+
+- Registered users can amend any upcoming booking requests
+  - This has not been implemented yet.
+
+- A user is notified if a desired slot is not available
+  - This has not been implemented yet.
+
+- Users will get a confirmation message stating the booking has been requested
+  - This has been achieved
+
+- Only a superuser can access booking requests
+  - This has been achieved
+
+- A superuser can approve booking requests
+  - This has been achieved
+
+- A superuser can cancel booking requests
+  - This has been achieved
+
+- A superuser can filter booking requests on the admin panel.
+  - This has been achieved
+
+- A superuser can sort booking requests on the admin panel.
+  - This has been achieved
+
+- A superuser can filter events displayed on the homepage from the admin panel.
+  - This has been achieved
+
+- A user can see the About section when they go to make a booking.
+  - This has been achieved
+
+- Any modification to the About section will be displayed to the user.
+  - This has been achieved
+
+- Only Superusers can modify the About section.
+  - This has been achieved
+
+- Any change will be displayed when a user next visits.
+  - This has been achieved
+
+- A user can create an account with their email.
+  - This has been achieved
+
+- A user can log in once the account has been created.
+  - This has been achieved
+
+- A user can see their approved and not yet approved comments.
+  - This has been achieved
+
+- A user can edit their comments once logged in.
+  - This has been achieved
+
+- Users can access the events' comments page from the homepage.
+  - This has been achieved
+
+- Users can leave a comment on any event.
+  - This has been achieved
 
 [Back to top](#contents)
 
