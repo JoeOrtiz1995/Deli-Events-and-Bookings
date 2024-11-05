@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .models import About, BookingRequest
 from .forms import BookingForm
 
+
 # Create your views here.
 def about_us(request):
     """
@@ -14,8 +15,8 @@ def about_us(request):
     ``about``
         The latest instance of :model:`booking.About`.
     ``bookings``
-        The User's booking if approved, and a message stating it's being reviewed otherwise
-        :model:`booking.BookingRequest.
+        The User's booking if approved, and a message stating
+        it's being reviewed otherwise :model:`booking.BookingRequest.
     ``booking_form``
         An instance of :form:`booking.booking_form`
     **Template**
@@ -33,16 +34,19 @@ def about_us(request):
             messages.add_message(request, messages.SUCCESS,
                                  "Booking Request Received!")
         else:
-            messages.add_message(request, messages.ERROR, "Sorry, it's not been possible to submit your booking request, plese try again or contact us.")
+            messages.add_message(
+                request, messages.ERROR,
+                "Sorry, it's not been possible to submit your booking request, plese try again or contact us."
+                )
 
     booking_form = BookingForm()
 
     return render(
-        request, 
+        request,
         "booking/booking.html",
         {
-            "about": about, 
-            "bookings": bookings, 
+            "about": about,
+            "bookings": bookings,
             "booking_form": booking_form,
         },
     )

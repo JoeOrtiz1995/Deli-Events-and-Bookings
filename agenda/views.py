@@ -23,9 +23,10 @@ class EventList(generic.ListView):
     template_name = "agenda/index.html"
     paginate_by = 4
 
+
 def event_detail(request, slug):
     """
-    Displays just one post in detail with the comments section below. 
+    Displays just one post in detail with the comments section below.
     :model:`event.Comment`
     **Context**
     ``event``
@@ -38,7 +39,7 @@ def event_detail(request, slug):
     :template:`agenda/event_detail.html`
     """
     queryset = Event.objects.filter(status=1)
-    event = get_object_or_404(queryset, slug = slug)
+    event = get_object_or_404(queryset, slug=slug)
     comments = event.comments.all().order_by("-created_on")
 
     if request.method == "POST":
@@ -49,7 +50,7 @@ def event_detail(request, slug):
             comment.event = event
             comment.save()
             messages.add_message(
-                request, messages.SUCCESS, 
+                request, messages.SUCCESS,
                 "Thanks for your comment! Once approved it will show, but you can still edit it if you'd like"
             )
 
@@ -89,9 +90,13 @@ def edit_comment(request, slug, comment_id):
             comment.event = event
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Your comment has been updated!')
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Your comment has been updated!')
         else:
-            messages.add_message(request, messages.ERROR, "Sorry, there's been an Error updating your comment")
+            messages.add_message(
+                request, messages.ERROR,
+                "Sorry, there's been an Error updating your comment")
 
     return HttpResponseRedirect(reverse('event_detail', args=[slug]))
 
@@ -113,8 +118,12 @@ def delete_comment(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Your comment has been deleted!')
+        messages.add_message(
+            request, messages.SUCCESS,
+            'Your comment has been deleted!')
     else:
-        messages.add_message(request, messages.ERROR, "It's only possible to delete your own comments")
+        messages.add_message(
+            request, messages.ERROR,
+            "It's only possible to delete your own comments")
 
     return HttpResponseRedirect(reverse('event_detail', args=[slug]))

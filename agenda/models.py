@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 STATUS = ((0, "Unconfirmed"), (1, "Approved"))
 
+
 # Create your models here.
 class Event(models.Model):
     """
@@ -23,7 +24,8 @@ class Event(models.Model):
         ordering = ["-event_date"]
 
     def __str__(self):
-        return f"{self.event_date} | {self.title} | Organised by {self.organiser}"
+        return f"{
+            self.event_date} | {self.title} | Organised by {self.organiser}"
 
 
 class Comment(models.Model):

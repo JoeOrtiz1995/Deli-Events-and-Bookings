@@ -318,8 +318,8 @@ Whenever a user submits a request such as leaving or editing a comment, or sendi
 
 <details><summary><b>User Messages on Booking Form</b></summary>
 
-![Booking Submitted]()
-![Booking Failed to Submit]()
+![Booking Submitted](readme/assets/images/booking_submitted.png)
+![Booking Failed to Submit](readme/assets/images/booking_submitted_fail.png)
 </details><br/>
 
 <details><summary><b>User messages when editing or deleting Comments</b></summary>
@@ -383,7 +383,7 @@ There are a number of features which unfortunately have not been able to be impl
 # TESTING
 
 ## TESTING USER STORIES
-A complete list of the User Stories can be found in here: 
+A complete list of the User Stories can be found here: 
 
 - [User Stories Log](readme/assets/documents/User_stories_helper_doc.pdf)
 
@@ -509,7 +509,23 @@ As mentioned above though, there were some features which were unable to be impl
 
 
 ## CODE VALIDATION
+The code was ran on the following validation sites:
 
+- [HTML Validation](https://validator.w3.org/) - Ran and returned no errors
+<details><summary><b>HTML Validator Results</b></summary>
+
+![HTML Validator Results](readme/assets/images/HTML_Validator.png)
+</details><br/>
+
+- [CSS Validation](https://jigsaw.w3.org/css-validator/) - Ran and returned no errors
+<details><summary><b>HTML Validator Results</b></summary>
+
+![CSS Validator Results](readme/assets/images/HTML_Validator.png)
+</details><br/>
+
+- [PEP8 Validation](http://pep8online.com/) - The Views, Admin, Model and Form files were checked using the CI Python Linter.
+
+- [JSHint Validation](https://jshint.com/) - Running the comments.js file returned just one error. There is an undefined variable connected to Bootstrap, however this is not an issue.
 
 [Back to top](#contents)
 
@@ -518,18 +534,22 @@ As mentioned above though, there were some features which were unable to be impl
 
 ## LIGHTHOUSE CHECKS
 
-
-[Back to top](#contents)
-
-
-### RESPONSIVENESS TEST
+<details><summary><b>Lighthouse Results</b></summary>
 
 
-[Back to top](#contents)
-
+![Lighthouse Results Index](readme/assets/images/lighthouse_results.png)
+![Lighthouse Results Event](readme/assets/images/lighthouse_results_event.png)
+![Lighthouse Results Bookings](readme/assets/images/lighthouse_results_bookings.png)
+</details><br/>
 
 ### BROWSER COMPATIBILITY
+The application was tested on the following browsers and it ran without any issues:
 
+- Google Chrome
+
+- Microsoft Edge
+
+- Mozilla Firefox
 
 [Back to top](#contents)
 
@@ -611,18 +631,16 @@ To clone this project follow the steps listed below:
 
 # CREDIT
 
-
-[Back to top](#contents)
-
-
 ## CONTENT CREDIT
+The concept for this project came from my cousin who owns the Deli Restaurant. 
 
+The content was created by myself, however I did rely on the Django Blog Walkthrough to help. 
 
 [Back to top](#contents)
 
 
 ## MEDIA CREDITS
-
+The pictures used come from Google. 
 
 [Back to top](#contents)
 

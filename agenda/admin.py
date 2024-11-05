@@ -13,7 +13,8 @@ class EventAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'event_date']
     list_filter = ('title', 'event_date',)
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('description', 'excerpt',)    
+    summernote_fields = ('description', 'excerpt',)
+
 
 # Register your models here.
 admin.site.register(Comment)

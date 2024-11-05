@@ -15,7 +15,7 @@ class AboutAdmin(SummernoteModelAdmin):
 @admin.register(BookingRequest)
 class BookingRequestAdmin(admin.ModelAdmin):
     """
-    Lists the confirmed, booking_date, booking_time and 
+    Lists the confirmed, booking_date, booking_time and
     guests fields for display in admin.
     """
     list_display = ('confirmed', 'booking_date', 'booking_time', 'guests',)
